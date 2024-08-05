@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <owl:Ontology rdf:about="https://ontology.scopeontology.org/scope/scope">
+            <rdfs:label xml:lang="en">case-master</rdfs:label>
+            <rdfs:comment xml:lang="en">The Smart City Ontological Paradigm Expression (SCOPE) ontology envisions to be a supplementary standard that defines concepts used in a technology-agnostic Smart City Infrastructure (SCI). The goal is to increase sharing and interoperability of threats, SCI components, data and investigation information for SCI adopters, investigators and stakeholders. SCOPE attempts to align with and extend the Unified Cyber Ontology (UCO) and the Cyber-investigation Analysis Standard Expression (CASE) ontology. </rdfs:comment>
+            <dct:title xml:lang="en">Smart City Ontological Paradigm Expression (SCOPE)</dct:title>
+            <owl:backwardCompatibleWith rdf:resource="https://ontology.scopeontology.org/scope/scope.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/vocabulary/vocabulary.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/crime/crime.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/evidence/evidence.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/indicators/indicators.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/infrastructure/infrastructure.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/role/role.ttl"/>
+            <owl:imports rdf:resource="https://ontology.scopeontology.org/scope/threats/threats.ttl"/>
+			<owl:imports rdf:resource="https://ontology.scopeontology.org/scope/attackpatterns/attackpatterns.ttl"/>
+            <owl:imports rdf:resource="https://ontology.caseontology.org/case/investigation/1.2.0"/>
+            <owl:imports rdf:resource="https://ontology.caseontology.org/case/vocabulary/1.2.0"/>
+            <owl:imports rdf:resource="https://ontology.unifiedcyberontology.org/uco/uco/1.2.0"/>
+            <owl:priorVersion rdf:resource="https://ontology.scopeontology.org/scope/0.1"/>
+            <owl:versionIRI rdf:resource="https://ontology.scopeontology.org/scope/0.1"/>
+            <owl:versionInfo>0.1.0</owl:versionInfo>
+    </owl:Ontology>
+
+</rdf:RDF>

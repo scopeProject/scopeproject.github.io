@@ -1,0 +1,148 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
+
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix crime: <https://ontology.scopeontology.org/scope/crime/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.scopeontology.org/scope/crime>
+	a owl:Ontology ;
+	rdfs:label "scope-crime"@en ;
+	rdfs:comment "An action which constitutes an offence and is punishable by law."@en ;
+	owl:imports core:1.1.0 ;
+	owl:versionIRI crime:0.1.0 ;
+	.
+
+crime:BudapestConvention
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:CyberCrime ;
+	rdfs:label "BudapestConvention"@en ;
+	rdfs:comment "The Budapest Convention on Cybercrime strives to create a common criminal policy aimed at the protection of society against cybercrime by adopting appropriate legislation and fostering international co-operation."@en ;
+	sh:targetClass crime:BudapestConvention ;
+	.
+
+crime:ComputerRelatedForgery
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:BudapestConvention ;
+	rdfs:label "ComputerRelatedForgery"@en ;
+	rdfs:comment "Article 7 of the Budapest Convention on Cybercrime."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:ComputerRelatedForgery ;
+	.
+
+crime:CyberCrime
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "CyberCrime"@en ;
+	rdfs:comment "Crimes that were committed or facilitated by the Internet, with no distinguishing factor as to how access to the Internet was obtained."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:CyberCrime ;
+	.
+
+crime:DataInterference
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:BudapestConvention ;
+	rdfs:label "DataInterference"@en ;
+	rdfs:comment "Article 4 of the Budapest Convention on Cybercrime."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:DataInterference ;
+	.
+
+crime:IllegalAccess
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:BudapestConvention ;
+	rdfs:label "IllegalAccess"@en ;
+	rdfs:comment "Article 2 of the Budapest Convention on Cybercrime."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:IllegalAccess ;
+	.
+
+crime:IllegalInterception
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:BudapestConvention ;
+	rdfs:label "IllegalInterception"@en ;
+	rdfs:comment "Article 3 of the Budapest Convention on Cybercrime."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:IllegalInterception ;
+	.
+
+crime:MisuseOfDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:BudapestConvention ;
+	rdfs:label "MisuseOfDevice"@en ;
+	rdfs:comment "Article 6 of the Budapest Convention on Cybercrime."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:MisuseOfDevice ;
+	.
+
+crime:SystemInterference
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf crime:BudapestConvention ;
+	rdfs:label "SystemInterference"@en ;
+	rdfs:comment "Article 5 of the Budapest Convention on Cybercrime."@en ;
+	#sh:property [
+		#sh:class location:Location ;
+		#sh:maxCount "1"^^xsd:integer ;
+		#sh:nodeKind sh:IRI ;
+		#sh:path identity:address ;
+	#] ;
+	sh:targetClass crime:SystemInterference ;
+	.
+

@@ -1,0 +1,364 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.1.0
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.1.0
+
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix infrastructure: <https://ontology.scopeontology.org/scope/infrastructure/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.scopeontology.org/scope/infrastructure>
+	a owl:Ontology ;
+	rdfs:label "scope-infrastructure"@en ;
+	rdfs:comment "This ontology defines infrastructure within a Smart City Infrastructure (SCI). The definition of SCI defined in this paper (https://doi.org/10.48550/arxiv.2210.14692) is preferred, although additional infrastructure types can be added in future to suit deployment needs or as SCI gets more mature."@en ;
+	owl:imports
+		core:1.1.0 ,
+		observable:1.1.0
+		;
+	owl:versionIRI infrastructure:0.1.0 ;
+	.
+
+infrastructure:CitizenServiceSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructure ;
+	rdfs:label "CitizenServiceSystem"@en ;
+	rdfs:comment "The systems that handle the various citizen services and capture relevant data indicators. For a more detailed explanation on how the systems are grouped, please refer to the paper (https://doi.org/10.48550/arxiv.2210.14692)."@en ;
+	sh:targetClass infrastructure:CitizenServiceSystem ;
+	.
+
+infrastructure:EconomySystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:CitizenServiceSystem ;
+	rdfs:label "EconomySystem"@en ;
+	rdfs:comment "The systems that handle Economy (Clause 5) services and capture relevant Economy data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:EconomySystem ;
+	.
+
+infrastructure:EducationSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:CitizenServiceSystem ;
+	rdfs:label "EducationSystem"@en ;
+	rdfs:comment "The systems that handle Education (Clause 6) services and capture relevant Education data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:EducationSystem ;
+	.
+
+infrastructure:EnergySystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:ResourceSystem ;
+	rdfs:label "EnergySystem"@en ;
+	rdfs:comment "The systems that handle Energy (Clause 7) services and capture relevant Energy data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:EnergySystem ;
+	.
+
+infrastructure:EnvironmentAndClimateChangeSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:LivelihoodSupportSystem ;
+	rdfs:label "EnvironmentAndClimateChangeSystem"@en ;
+	rdfs:comment "The systems that handle Environment and Climate Change (Clause 8) services and capture relevant Environment and Climate Change data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:EnvironmentAndClimateChangeSystem ;
+	.
+
+infrastructure:EssentialServiceSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructure ;
+	rdfs:label "EssentialServiceSystem"@en ;
+	rdfs:comment "The systems that handle the various essential services and capture relevant data indicators. For a more detailed explanation on how the systems are grouped, please refer to the paper (https://doi.org/10.48550/arxiv.2210.14692)."@en ;
+	sh:targetClass infrastructure:EssentialServiceSystem ;
+	.
+
+infrastructure:FinanceSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:CitizenServiceSystem ;
+	rdfs:label "FinanceSystem"@en ;
+	rdfs:comment "The systems that handle Finance (Clause 9) services and capture relevant Finance data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:FinanceSystem ;
+	.
+
+infrastructure:GovernanceSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:CitizenServiceSystem ;
+	rdfs:label "GovernanceSystem"@en ;
+	rdfs:comment "The systems that handle Governance (Clause 10) services and capture relevant Governance data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:GovernanceSystem ;
+	.
+
+infrastructure:HealthSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:EssentialServiceSystem ;
+	rdfs:label "HealthSystem"@en ;
+	rdfs:comment "The systems that handle Health (Clause 11) services and capture relevant Health data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:HealthSystem ;
+	.
+
+infrastructure:HousingSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:CitizenServiceSystem ;
+	rdfs:label "HousingSystem"@en ;
+	rdfs:comment "The systems that handle Housing (Clause 12) services and capture relevant Housing data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:HousingSystem ;
+	.
+
+infrastructure:Infrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Infrastructure"@en ;
+	rdfs:comment "The basic physical and organizational structures and facilities (e.g. buildings, roads, power supplies) needed for the operation of a society or enterprise."@en-us ;
+	sh:targetClass infrastructure:Infrastructure ;
+	.
+
+infrastructure:LivelihoodSupportSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructure ;
+	rdfs:label "LivelihoodSupportSystem"@en ;
+	rdfs:comment "The systems that handle the various livelihood support requirements and capture relevant data indicators. For a more detailed explanation on how the systems are grouped, please refer to the paper (https://doi.org/10.48550/arxiv.2210.14692)."@en ;
+	sh:targetClass infrastructure:LivelihoodSupportSystem ;
+	.
+
+infrastructure:LowerLevelLayer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructureLayer ;
+	rdfs:label "LowerLevelLayer"@en ;
+	rdfs:comment "This layer is used when a kernel level system is built. It is Layer 3 in the Microsoft Threat Modeling Tool (TMT). "@en ;
+	sh:targetClass infrastructure:LowerLevelLayer ;
+	.
+
+infrastructure:PopulationAndSocialConditionSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:LivelihoodSupportSystem ;
+	rdfs:label "PopulationAndSocialConditionSystem"@en ;
+	rdfs:comment "The systems that handle Population and Social Condition (Clause 13)services and capture relevant Population and Social Condition data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:PopulationAndSocialConditionSystem ;
+	.
+
+infrastructure:ProcessLayer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructureLayer ;
+	rdfs:label "ProcessLayer"@en ;
+	rdfs:comment "This layer contains secondary system parts that originate from the system layer. It is Layer 1 in the Microsoft Threat Modeling Tool (TMT). "@en ;
+	sh:targetClass infrastructure:ProcessLayer ;
+	.
+
+infrastructure:RecreationSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:LivelihoodSupportSystem ;
+	rdfs:label "RecreationSystem"@en ;
+	rdfs:comment "The systems that handle Recreation (Clause 14) services and capture relevant Recreation data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:RecreationSystem ;
+	.
+
+infrastructure:ResourceSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructure ;
+	rdfs:label "ResourceSystem"@en ;
+	rdfs:comment "The systems that handle the various resources and capture relevant data indicators. For a more detailed explanation on how the systems are grouped, please refer to the paper (https://doi.org/10.48550/arxiv.2210.14692)."@en ;
+	sh:targetClass infrastructure:ResourceSystem ;
+	.
+
+infrastructure:SafetySystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:EssentialServiceSystem ;
+	rdfs:label "SafetySystem"@en ;
+	rdfs:comment "The systems that handle Safety (Clause 15) services and capture relevant Safety data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:SafetySystem ;
+	.
+
+infrastructure:SmartCityInfrastructure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "SmartCityInfrastructure"@en ;
+	rdfs:comment "Smart City Infrastructure (SCI) are infrastructure designed to fulfil and address the six purposes of sustainability and twelve sustainability issues based on ISO 37101:2016, with technical implementations that provide visibility to data indicators set out in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019. (https://doi.org/10.48550/arxiv.2210.14692) "@en ;
+	sh:targetClass infrastructure:SmartCityInfrastructure ;
+	.
+
+infrastructure:SmartCityInfrastructureLayer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructure ;
+	rdfs:label "SmartCityInfrastructureLayer"@en ;
+	rdfs:comment "A Smart City Infrastructure (SCI) layer refers to one of the four various logical layers (Layer 0 to 3) that contains the SCI system components. These components are represented in a threat model that the Microsoft Threat Modeling Tool (TMT) can visualize. "@en-us ;
+	sh:targetClass infrastructure:SmartCityInfrastructureLayer ;
+	.
+
+infrastructure:SmartCitySystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructure ;
+	rdfs:label "SmartCitySystem"@en ;
+	rdfs:comment "The systems that handle the 4 subsystems (citizen services, essential services, livelihood support and resources) and capture relevant data indicators. For a more detailed explanation on how the systems are grouped, please refer to the paper (https://doi.org/10.48550/arxiv.2210.14692)."@en ;
+	sh:targetClass infrastructure:SmartCitySystem ;
+	.
+
+infrastructure:SolidWasteSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:EssentialServiceSystem ;
+	rdfs:label "SolidWasteSystem"@en ;
+	rdfs:comment "The systems that handle Solid Waste (Clause 16) services and capture relevant Solid Waste data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019.(https://doi.org/10.48550/arxiv.2210.14692)"@en ;
+	sh:targetClass infrastructure:SolidWasteSystem ;
+	.
+
+infrastructure:SportAndCultureSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:LivelihoodSupportSystem ;
+	rdfs:label "SportAndCultureSystem"@en ;
+	rdfs:comment "The systems that handle Sport and Culture (Clause 17) services and capture relevant Sport and Culture data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:SportAndCultureSystem ;
+	.
+
+infrastructure:SubprocessLayer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructureLayer ;
+	rdfs:label "SubprocessLayer"@en ;
+	rdfs:comment "This layer contains details of the various components that the secondary systems are composed of. It is Layer 2 in the Microsoft Threat Modeling Tool (TMT). "@en ;
+	sh:targetClass infrastructure:SubprocessLayer ;
+	.
+
+infrastructure:SystemLayer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:SmartCityInfrastructureLayer ;
+	rdfs:label "SystemLayer"@en ;
+	rdfs:comment "Also known as the context layer. It is Layer 0 in the Microsoft Threat Modeling Tool (TMT). "@en ;
+	sh:targetClass infrastructure:SystemLayer ;
+	.
+
+infrastructure:TelecommunicationSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:EssentialServiceSystem ;
+	rdfs:label "TelecommunicationSystem"@en ;
+	rdfs:comment "The systems that handle Telecommunication (Clause 18) services and capture relevant Telecommunication data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:TelecommunicationSystem ;
+	.
+
+infrastructure:TransportationSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:EssentialServiceSystem ;
+	rdfs:label "TransportationSystem"@en ;
+	rdfs:comment "The systems that handle Transportation (Clause 19) services and capture relevant Transportation data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:TransportationSystem ;
+	.
+
+infrastructure:UrbanLocalAgricultureAndFoodSecuritySystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:LivelihoodSupportSystem ;
+	rdfs:label "UrbanLocalAgricultureAndFoodSecuritySystem"@en ;
+	rdfs:comment "The systems that handle Urban/Local Agriculture and Food Security (Clause 20) services and capture relevant Urban/Local Agriculture and Food Security data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:UrbanLocalAgricultureAndFoodSecuritySystem ;
+	.
+
+infrastructure:UrbanPlanningSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:LivelihoodSupportSystem ;
+	rdfs:label "UrbanPlanningSystem"@en ;
+	rdfs:comment "The systems that handle Urban Planning (Clause 21) services and capture relevant Urban Planning data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:UrbanPlanningSystem ;
+	.
+
+infrastructure:WastewaterSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:EssentialServiceSystem ;
+	rdfs:label "WastewaterSystem"@en ;
+	rdfs:comment "The systems that handle Wastewater (Clause 22) services and capture relevant Wastewater data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:WastewaterSystem ;
+	.
+
+infrastructure:WaterSystem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf infrastructure:ResourceSystem ;
+	rdfs:label "WaterSystem"@en ;
+	rdfs:comment "The systems that handle Water (Clause 23) services and capture relevant Water data indicators stated in ISO 37120:2018, ISO 37122:2019 and ISO 37123:2019."@en ;
+	sh:targetClass infrastructure:WaterSystem ;
+	.
+

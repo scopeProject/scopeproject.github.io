@@ -1,0 +1,227 @@
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.1.0
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix threats: <https://ontology.scopeontology.org/scope/threats/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.scopeontology.org/scope/threats>
+	a owl:Ontology ;
+	rdfs:label "scope-threats"@en ;
+	rdfs:comment "This ontology defines threats that are identified within Smart City Infrastructure (SCI)."@en ;
+	owl:imports observable:1.1.0 ;
+	owl:versionIRI threats:0.1.0 ;
+	.
+
+threats:ChangeExecutionFlow
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:ElevationOfPrivilege ;
+	rdfs:label "ChangeExecutionFlow"@en ;
+	rdfs:comment "An adversary could send data into the target system to change the flow of program execution into one that the adversary selects."@en ;
+	sh:targetClass threats:ChangeExecutionFlow ;
+	.
+	
+threats:CrossSiteRequestForgery
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:ElevationOfPrivilege ;
+	rdfs:label "CrossSiteRequestForgery"@en ;
+	rdfs:comment "An adversary causes a user's browser to make a forged request to a vulnerable web resource by exploiting an existing trust relationship between the browser and the vulnerable web site."@en ;
+	sh:targetClass threats:CrossSiteRequestForgery ;
+	.
+	
+threats:DataFlowInterruption
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:DenialOfService ;
+	rdfs:label "DataFlowInterruption"@en ;
+	rdfs:comment "Data being sent or received is interrupted due to external influences."@en ;
+	sh:targetClass threats:DataFlowInterruption ;
+	.
+
+threats:DataFlowSniffing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:InformationDisclosure ;
+	rdfs:label "DataFlowSniffing"@en ;
+	rdfs:comment "Data flowing across the system may be sniffed by an adversary."@en ;
+	sh:targetClass threats:DataFlowSniffing ;
+	.
+
+threats:DataRepudiation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Repudiation ;
+	rdfs:label "DataRepudiation"@en ;
+	rdfs:comment "Potential repudiation of data being sent or received by the system."@en ;
+	sh:targetClass threats:DataRepudiation ;
+	.
+
+threats:DataStoreSpoofing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Spoofing ;
+	rdfs:label "DataStoreSpoofing"@en ;
+	rdfs:comment "Spoofing of data store that may lead to incorrect data being sent when requested."@en ;
+	sh:targetClass threats:DataStoreSpoofing ;
+	.
+
+threats:DenialOfService
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Threat ;
+	rdfs:label "DenialOfService"@en ;
+	rdfs:comment "Denial of service occurs when an adversary causes the system to be unavailable."@en ;
+	sh:targetClass threats:DenialOfService ;
+	.
+
+threats:ElevationOfPrivilege
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Threat ;
+	rdfs:label "ElevationOfPrivilege"@en ;
+	rdfs:comment "Elevation of privilege occurs when an individual accesses resources that were originally restricted from access."@en ;
+	sh:targetClass threats:ElevationOfPrivilege ;
+	.
+
+threats:Impersonation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:ElevationOfPrivilege ;
+	rdfs:label "Impersonation"@en ;
+	rdfs:comment "An adversary, malicious program or system pretends to be a legitimate user, program or system and gains additional privileges."@en-us ;
+	sh:targetClass threats:Impersonation ;
+	.
+
+threats:InformationDisclosure
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Threat ;
+	rdfs:label "InformationDisclosure"@en ;
+	rdfs:comment "Information disclosure occurs when sensitive data is exposed to unauthorized individuals either accidentally or deliberately."@en-us ;
+	sh:targetClass threats:InformationDisclosure ;
+	.
+
+threats:LackOfInputValidation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Tampering ;
+	rdfs:label "LackOfInputValidation"@en ;
+	rdfs:comment "A lack of input validation could allow data be tampered with by an adversary."@en ;
+	sh:targetClass threats:LackOfInputValidation ;
+	.
+
+threats:ProcessSpoofing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Spoofing ;
+	rdfs:label "ProcessSpoofing"@en ;
+	rdfs:comment "A running process in the system may be spoofed."@en ;
+	sh:targetClass threats:ProcessSpoofing ;
+	.
+
+threats:ProcessTermination
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:DenialOfService ;
+	rdfs:label "ProcessTermination"@en ;
+	rdfs:comment "A running process crashes or stops."@en ;
+	sh:targetClass threats:ProcessTermination ;
+	.
+
+threats:RemoteCodeExecution
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:ElevationOfPrivilege ;
+	rdfs:label "RemoteCodeExecution"@en ;
+	rdfs:comment "A remote code execution (RCE) attack allows adversaries to remotely execute malicious code on a system."@en ;
+	sh:targetClass threats:RemoteCodeExecution ;
+	.
+
+threats:Repudiation
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Threat ;
+	rdfs:label "Repudiation"@en ;
+	rdfs:comment "Repudiation occurs when an individual or program, with or without malicious intent, takes an action but claims otherwise."@en-us ;
+	sh:targetClass threats:Repudiation ;
+	.
+	
+threats:Spoofing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Threat ;
+	rdfs:label "Spoofing"@en ;
+	rdfs:comment "Spoofing occurs when a malicious adversary or a program successfully impersonates the user or system to execute malicious activities."@en ;
+	sh:targetClass threats:Spoofing ;
+	.
+
+threats:Tampering
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:Threat ;
+	rdfs:label "Tampering"@en ;
+	rdfs:comment "Tampering occurs when an advesary reads, modifies, deletes, or inserts data in a system without authorization."@en-us ;
+	sh:targetClass threats:Tampering ;
+	.
+
+threats:Threat
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableAction ;
+	rdfs:label "Threat"@en ;
+	rdfs:comment "An action or thing that is likely to cause damage or danger."@en ;
+	sh:targetClass threats:Threat ;
+	.
+
+threats:WeakAccessControl
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf threats:InformationDisclosure ;
+	rdfs:label "WeakAccessControl"@en ;
+	rdfs:comment "Data in the system, sub-system, process or resource is improperly protected."@en ;
+	sh:targetClass threats:WeakAccessControl ;
+	.
+
